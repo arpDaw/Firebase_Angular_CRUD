@@ -32,6 +32,6 @@ import { DetailComponent } from './components/detail/detail.component';
     MatButtonModule,
     MatDialogModule,
     MatCardModule
-  ]
+  ],
 })
 export class PokemonModule { }

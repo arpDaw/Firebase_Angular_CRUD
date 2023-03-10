@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, filter, tap } from 'rxjs';
+import { Observable, filter, tap, Subject, takeUntil } from 'rxjs';
 
 import { FormComponent } from './components/form/form.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -14,6 +14,7 @@ import { Pokemon } from './interfaces/pokemon.interface';
 export class PokemonComponent implements OnInit{
   allPokemon$: Observable<Pokemon[]>;
   selectedPokemon?: Pokemon;
+  destroyed$ = new Subject<void>();
 
   constructor(
     private readonly pokedexService: PokedexFirestoreService,
@@ -22,6 +23,10 @@ export class PokemonComponent implements OnInit{
 
   ngOnInit(): void {
       this.allPokemon$ = this.pokedexService.getAll();
+  }
+
+  ngOnDestroy(){
+    this.destroyed$.next();
   }
 
   addPokemon(){
@@ -34,7 +39,8 @@ export class PokemonComponent implements OnInit{
       .afterClosed()
       .pipe(
         filter(Boolean),
-        tap((pokemon) => this.pokedexService.create(pokemon))
+        tap((pokemon) => this.pokedexService.create(pokemon)),
+        takeUntil(this.destroyed$)
       ).subscribe();
   }
 
