@@ -1,14 +1,37 @@
-<h2>Login de usuario</h2>
-<form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
-  <div class="mb-3">
-    <label class="form-label">Email</label>
-    <input type="text" class="form-control" formControlName="email" />
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Password</label>
-    <input type="password" class="form-control" formControlName="password" />
-  </div>
-  <input type="submit" value="Enviar" />
-</form>
+<div class="flex flex-col h-screen justify-center items-center">
+  <div
+    class="flex flex-col justify-center bg-gray-300 items-center p-8 rounded-xl"
+  >
+    <form
+      class="flex flex-col justify-center items-center"
+      [formGroup]="formLogin"
+      (ngSubmit)="onSubmit()"
+    >
+      <h2>Login de usuario</h2>
+      <mat-form-field class="" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="email"
+          matInput
+        />
+      </mat-form-field>
 
-<button (click)="goReg()">Register</button>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          matInput
+        />
+      </mat-form-field>
+      <button mat-raised-button color="primary">Login</button>
+    </form>
+
+    <button class="mt-2" mat-raised-button color="primary" (click)="goReg()">
+      Go to Register
+    </button>
+  </div>
+</div>

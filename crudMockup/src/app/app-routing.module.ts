@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'main',
    loadChildren: () => import('./features/companies/company/company.module').then(m => m.CompanyModule),
    ...canActivate(()=>redirectUnauthorizedTo(['/login'])) 
-  }
+  },
+  { path: 'access', loadChildren: () => import('./features/access/access.module').then(m => m.AccessModule) }
 
 ];
 
