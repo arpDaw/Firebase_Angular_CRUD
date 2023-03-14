@@ -1,0 +1,15 @@
+<div class="detail">
+  <h2>{{ company.name }}</h2>
+  <h4>{{ company.id }}</h4>
+  <div class="content">
+    <div>
+      <p>Default Template ID: {{ company.defaultTemplateId }}</p>
+      <p>Departments: {{ company.departments }}</p>
+      <p>Product types: {{ company.productTypes }}</p>
+    </div>
+  </div>
+  <div>
+    <button (click)="update()" mat-raised-button color="primary">Edit</button>
+    <button (click)="delete()" mat-raised-button color="warn">Delete</button>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<form [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Default Template ID</mat-label>
+    <input
+      required
+      formControlName="defaultTemplateId"
+      class="form-control"
+      placeholder="Default Template ID"
+      type="text"
+      matInput
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Department</mat-label>
+    <input
+      matInput
+      required
+      formControlName="departments"
+      class="form-control"
+      placeholder="Department"
+      type="text"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Company Name</mat-label>
+    <input
+      matInput
+      required
+      formControlName="name"
+      class="form-control"
+      placeholder="Company Name"
+      type="text"
+    />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Product Types</mat-label>
+    <input
+      matInput
+      required
+      formControlName="productTypes"
+      class="form-control"
+      placeholder="productTypes"
+      type="text"
+    />
+  </mat-form-field>
+  <button
+    type="button"
+    mat-raised-button
+    (click)="submit()"
+    color="primary"
+    [disabled]="!form.valid"
+  >
+    Submit
+  </button>
+</form>
