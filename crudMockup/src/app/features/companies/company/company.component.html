@@ -4,13 +4,9 @@
   </div>
   <div class="content">
     <div class="list">
-      <div class="list-header">
-        <h3>List of Companies</h3>
+      <div class="list-header flex flex-col justify-center items-center">
         <button mat-raised-button color="primary" (click)="addCompany()">
           Add Company
-        </button>
-        <button mat-raised-button color="#f0341d" (click)="logout()">
-          Logout
         </button>
       </div>
       <app-list
@@ -25,4 +21,5 @@
       (updateCompany)="updateCompany()"
     ></app-detail>
   </div>
+  <button mat-raised-button class="mt-6" (click)="logout()">Logout</button>
 </div>
