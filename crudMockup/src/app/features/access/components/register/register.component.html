@@ -8,7 +8,7 @@
       (ngSubmit)="onSubmit()"
     >
       <h2>Registro de usuario</h2>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Email</mat-label>
         <input
           type="text"
@@ -17,7 +17,7 @@
           matInput
         />
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Password</mat-label>
         <input
           type="password"
@@ -26,7 +26,10 @@
           matInput
         />
       </mat-form-field>
-      <button mat-raised-button color="primary">Register</button>
+      <button mat-raised-button color="accent">Register</button>
     </form>
+    <button class="mt-4" mat-raised-button color="primary" (click)="goLog()">
+      Go to Login
+    </button>
   </div>
 </div>

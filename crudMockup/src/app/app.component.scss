@@ -547,8 +547,8 @@ video {
   }
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .mt-5 {
@@ -587,10 +587,6 @@ video {
   justify-content: space-between;
 }
 
-.gap-6 {
-  gap: 1.5rem;
-}
-
 .gap-12 {
   gap: 3rem;
 }
@@ -608,15 +604,6 @@ video {
   padding: 2rem;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.text-red-600 {
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-
 .outline {
   outline-style: solid;
 }
@@ -632,4 +619,12 @@ html, body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-mdc-form-field .mdc-notched-outline__notch {
+  border-right: 0px !important;
+}
+
+.mat-mdc-text-field-wrapper {
+  background-color: #FFFFFF;
 }
